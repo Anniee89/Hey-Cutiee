@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Malti ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+body {
+    color: white;
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            #61246f 0%,
+            #321344 30%,
+            #130722 65%,
+            #04020b 100%
+        );
+}
+
+/* STARS */
+#stars {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: .15;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* SHOOTING STAR */
+.shooting-star {
+    position: fixed;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, white);
+    transform: rotate(-35deg);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.shooting-star.active {
+    animation: shooting 1.2s linear;
+}
+
+@keyframes shooting {
+    0% {
+        transform: translate(0,0) rotate(-35deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-500px,500px) rotate(-35deg);
+        opacity: 0;
+    }
+}
+
+/* MOON */
+.moon {
+    position: fixed;
+    top: 35px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff7d6;
+    box-shadow:
+        0 0 25px rgba(255,255,220,.9),
+        0 0 80px rgba(255,255,220,.25);
+    z-index: 2;
+}
+
+.moon::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #241033;
+    left: 27px;
+    top: -10px;
+}
+
+/* FLOATING EMOJIS */
+.floating {
+    position: fixed;
+    bottom: -60px;
+    z-index: 3;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: .9;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SLIDES */
+.slide {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.08) translateY(20px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease,
+        visibility .9s;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+}
+
+/* GLASS CARD */
+.card {
+    width: min(760px, 95%);
+    padding: 55px 35px;
+    text-align: center;
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.11),
+            rgba(255,70,180,.08),
+            rgba(100,40,180,.10)
+        );
+
+    border: 1px solid rgba(255,210,240,.25);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 0 80px rgba(255,50,190,.22),
+        inset 0 0 40px rgba(255,255,255,.04);
+}
+
+.card h1 {
+    font-size: clamp(32px, 7vw, 62px);
+    margin-bottom: 25px;
+    line-height: 1.2;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffb9e8,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #ffeaf8;
+}
+
+/* BUTTONS */
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    padding: 15px 30px;
+    margin-top: 28px;
+    border-radius: 50px;
+
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4fa3,
+            #8e44d6
+        );
+
+    box-shadow:
+        0 10px 30px rgba(255,50,180,.35);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+button:hover {
+    transform:
+        translateY(-3px)
+        scale(1.05);
+
+    box-shadow:
+        0 15px 40px rgba(255,50,180,.55);
+}
+
+.small-btn {
+    font-size: 15px;
+    padding: 12px 24px;
+}
+
+/* HEART LOADER */
+.loader-heart {
+    font-size: 75px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+/* QUESTION CARD */
+.question-card {
+    width: min(760px, 95%);
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,70,170,.18),
+            rgba(100,40,180,.20)
+        );
+
+    border: 1px solid rgba(255,190,230,.35);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 70px rgba(255,50,180,.25);
+}
+
+.question-card h1 {
+    font-size: clamp(28px, 6vw, 52px);
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.question-card p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ffd9ee;
+}
+
+.button-area {
+    position: relative;
+    min-height: 150px;
+    margin-top: 10px;
+}
+
+/* POETRY */
+#poetry {
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 60px 20px;
+}
+
+.letter {
+    width: min(880px, 96%);
+    margin: auto;
+    padding: 50px 30px;
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,70,180,.09),
+            rgba(120,50,190,.10)
+        );
+
+    border: 1px solid rgba(255,210,240,.22);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 90px rgba(255,50,190,.18);
+}
+
+.letter-title {
+    text-align: center;
+    font-size: clamp(36px, 7vw, 68px);
+    color: #ffd9ef;
+
+    text-shadow:
+        0 0 25px rgba(255,90,200,.7);
+
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #ffcce8;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* MESSAGE BOXES */
+.message,
+.special,
+.final {
+    margin: 25px 0;
+    padding: 28px;
+    border-radius: 24px;
+
+    background: rgba(255,255,255,.065);
+
+    border: 1px solid rgba(255,180,230,.16);
+
+    box-shadow:
+        0 0 30px rgba(255,50,180,.07);
+}
+
+.message p,
+.special p,
+.final p {
+    font-size: 19px;
+    line-height: 1.9;
+    color: #ffeaf7;
+}
+
+.special {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,80,170,.14),
+            rgba(100,50,190,.15)
+        );
+}
+
+.final {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,80,170,.27),
+            rgba(120,50,210,.28)
+        );
+
+    border: 1px solid rgba(255,200,240,.35);
+
+    box-shadow:
+        0 0 45px rgba(255,60,190,.25);
+}
+
+.final p {
+    font-size: 22px;
+}
+
+.apology {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,70,170,.75),
+            rgba(125,50,210,.80),
+            rgba(255,100,190,.75)
+        );
+
+    border: 2px solid rgba(255,220,245,.7);
+
+    box-shadow:
+        0 0 50px rgba(255,70,190,.55);
+}
+
+/* QUOTE */
+.quote {
+    width: min(800px, 95%);
+    padding: 55px 30px;
+    text-align: center;
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,60,170,.20),
+            rgba(110,50,200,.22)
+        );
+
+    border: 1px solid rgba(255,210,240,.3);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 80px rgba(255,50,190,.25);
+}
+
+.quote-text {
+    font-size: clamp(25px, 5vw, 40px);
+    line-height: 1.5;
+    color: #ffe5f5;
+
+    text-shadow:
+        0 0 20px rgba(255,100,210,.5);
+}
+
+/* MISS UNIVERSE */
+.crown {
+    font-size: clamp(55px, 10vw, 90px);
+    margin-bottom: 10px;
+    animation: crownGlow 2s infinite alternate;
+}
+
+@keyframes crownGlow {
+    from {
+        transform: scale(1) rotate(-3deg);
+        filter:
+            drop-shadow(
+                0 0 5px
+                rgba(255,220,100,.4)
+            );
+    }
+
+    to {
+        transform: scale(1.08) rotate(3deg);
+        filter:
+            drop-shadow(
+                0 0 25px
+                rgba(255,220,100,.9)
+            );
+    }
+}
+
+.universe-card {
+    width: min(780px, 95%);
+    padding: 55px 30px;
+    text-align: center;
+    border-radius: 38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,70,170,.20),
+            rgba(100,40,190,.25),
+            rgba(255,120,200,.12)
+        );
+
+    border: 1px solid rgba(255,210,240,.4);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 0 90px rgba(255,50,190,.3);
+}
+
+.universe-card h1 {
+    font-size: clamp(28px, 6vw, 52px);
+    line-height: 1.35;
+    color: #ffe6f6;
+}
+
+.universe-card p {
+    color: #ffd9ef;
+    font-size: 19px;
+    margin-top: 15px;
+}
+
+.universe-buttons {
+    position: relative;
+    min-height: 160px;
+}
+
+.winner-card {
+    width: min(760px, 95%);
+    padding: 55px 30px;
+    text-align: center;
+    border-radius: 38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,70,170,.22),
+            rgba(110,40,200,.25)
+        );
+
+    border: 1px solid rgba(255,210,240,.45);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 0 100px rgba(255,50,190,.35);
+}
+
+.winner-card h1 {
+    font-size: clamp(32px, 7vw, 62px);
+    color: #ffe5f5;
+
+    text-shadow:
+        0 0 25px rgba(255,100,210,.7);
+
+    margin-bottom: 10px;
+}
+
+.winner-card p {
+    font-size: 20px;
+    color: #ffd6eb;
+    line-height: 1.7;
+}
+
+.reason {
+    display: none;
+    margin-top: 30px;
+    padding: 28px;
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,70,170,.35),
+            rgba(120,50,200,.35)
+        );
+
+    border: 1px solid rgba(255,220,245,.5);
+
+    animation: reveal .9s ease;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.reason p {
+    color: white;
+    font-size: clamp(21px, 4vw, 30px);
+}
+
+.final-heart {
+    font-size: 80px;
+    animation: finalHeartbeat 1.5s infinite;
+}
+
+@keyframes finalHeartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.signature {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #ffcce8;
+}
+
+/* PASSWORD SCREEN */
+#passwordGate {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            #61246f 0%,
+            #321344 35%,
+            #130722 70%,
+            #04020b 100%
+        );
+}
+
+.password-card {
+    width: min(520px, 95%);
+    padding: 45px 30px;
+    text-align: center;
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.11),
+            rgba(255,70,180,.08),
+            rgba(100,40,180,.10)
+        );
+
+    border: 1px solid rgba(255,210,240,.25);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 0 80px rgba(255,50,190,.22),
+        inset 0 0 40px rgba(255,255,255,.04);
+}
+
+.password-card .lock {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.password-card h1 {
+    font-size: clamp(30px, 7vw, 48px);
+    margin-bottom: 12px;
+    color: #ffeaf8;
+}
+
+.password-card p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #ffd9ef;
+}
+
+.password-input {
+    width: min(360px, 100%);
+
+    margin-top: 25px;
+    padding: 15px 20px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255,210,240,.3);
+
+    outline: none;
+
+    background: rgba(255,255,255,.09);
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    font-family: inherit;
+}
+
+.password-input::placeholder {
+    color: #e8c9df;
+}
+
+.password-error {
+    min-height: 25px;
+    margin-top: 12px;
+    color: #ffb3d9;
+    font-size: 15px;
+}
+
+.password-card button {
+    margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .moon {
+        width: 55px;
+        height: 55px;
+        top: 22px;
+        right: 22px;
+    }
+
+    .moon::after {
+        width: 55px;
+        height: 55px;
+        left: 18px;
+        top: -7px;
+    }
+
+    .card,
+    .question-card,
+    .universe-card,
+    .winner-card,
+    .quote {
+        padding: 38px 20px;
+    }
+
+    .card p,
+    .message p,
+    .special p {
+        font-size: 17px;
+    }
+
+    .letter {
+        padding: 35px 18px;
+    }
+
+    .final p {
+        font-size: 19px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 13px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD PROTECTION -->
+<div id="passwordGate">
+
+    <div class="password-card">
+
+        <div class="lock">
+            🔐
+        </div>
+
+        <h1>
+            Private Message ❤️
+        </h1>
+
+        <p>
+            This little surprise is protected.
+            <br>
+            Enter the password to open it.
+        </p>
+
+        <input
+            id="passwordInput"
+            class="password-input"
+            type="password"
+            placeholder="Enter password"
+            autocomplete="off"
+            onkeydown="if(event.key === 'Enter') checkPassword()"
+        >
+
+        <div
+            id="passwordError"
+            class="password-error">
+        </div>
+
+        <button onclick="checkPassword()">
+            Unlock 💌
+        </button>
+
+    </div>
+
+</div>
+
+<!-- BACKGROUND -->
+<div id="stars"></div>
+
+<div class="moon"></div>
+
+<div
+    class="shooting-star"
+    id="shootingStar">
+</div>
+
+
+<!-- =========================================================
+     SLIDE 1
+========================================================= -->
+
+<section
+    id="slide1"
+    class="slide active">
+
+    <div class="card">
+
+        <div class="loader-heart">
+            ❤️
+        </div>
+
+        <h1>
+            Hey Malti...
+        </h1>
+
+        <p>
+            I made something for you.
+
+            <br><br>
+
+            It isn't expensive.
+            It isn't perfect.
+
+            <br><br>
+
+            But I put a little piece
+            of my heart into making it.
+
+            🌸
+        </p>
+
+        <button
+            onclick="nextSlide('slide1','slide2')">
+
+            Open It 💌
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIDE 2
+========================================================= -->
+
+<section
+    id="slide2"
+    class="slide">
+
+    <div class="card">
+
+        <h1>
+            Before You Continue... 😶
+        </h1>
+
+        <p>
+            There is a small possibility
+            that you may smile.
+
+            <br><br>
+
+            There is also a possibility
+            that you may call me crazy. 😂
+
+            <br><br>
+
+            Proceed at your own risk. ❤️
+        </p>
+
+        <button
+            onclick="nextSlide('slide2','slide3')">
+
+            I'm Ready 😌
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIDE 3
+========================================================= -->
+
+<section
+    id="slide3"
+    class="slide">
+
+    <div class="question-card">
+
+        <h1>
+            Do You Believe in Love at First Sight? ❤️
+        </h1>
+
+        <p>
+            Sometimes you don't need years
+            to notice someone.
+
+            <br>
+
+            Sometimes one moment is enough.
+        </p>
+
+        <div class="button-area">
+
+            <button
+                id="loveYes"
+                onclick="nextSlide('slide3','slide4')">
+
+                Maybe ❤️
+
+            </button>
+
+            <button id="loveNo">
+
+                Absolutely Not 😏
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIDE 4
+========================================================= -->
+
+<section
+    id="slide4"
+    class="slide">
+
+    <div class="question-card">
+
+        <h1>
+            Do You Want To Read My Message? 💌
+        </h1>
+
+        <p>
+            I promise...
+
+            <br>
+
+            no boring lecture. 😜
+        </p>
+
+        <div class="button-area">
+
+            <button
+                onclick="nextSlide('slide4','poetry')">
+
+                Yes ❤️
+
+            </button>
+
+            <button id="messageNo">
+
+                No 😜
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     POETRY / MESSAGE
+========================================================= -->
+
+<section
+    id="poetry"
+    class="slide">
+
+    <div class="letter">
+
+        <h1 class="letter-title">
+            The Garden You Became 🌸
+        </h1>
+
+        <p class="subtitle">
+            For Malti — from a heart that wasn't expecting this. ❤️
+        </p>
+
+
+        <div class="message">
+
+            <p>
+                Malti, I don't know exactly
+                how to explain what happened to me.
+
+                <br><br>
+
+                But the moment I saw your picture,
+                something inside me became strangely quiet.
+
+                <br><br>
+
+                For the first time in a long time,
+                my thoughts didn't feel heavy.
+            </p>
+
+        </div>
+
+
+        <div class="special">
+
+            <p>
+                It felt like suddenly finding myself
+                standing in a garden...
+
+                <br><br>
+
+                surrounded by flowers,
+                peaceful air,
+                and a kind of silence
+                that makes the heart breathe again.
+
+                🌸
+            </p>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                Maybe it was your smile.
+
+                <br>
+
+                Maybe your eyes.
+
+                <br>
+
+                Maybe it was something
+                I still don't have words for.
+
+                <br><br>
+
+                But somehow...
+
+                <br>
+
+                <strong>
+                    you stayed in my thoughts.
+                </strong>
+            </p>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                You didn't simply catch my attention.
+
+                <br><br>
+
+                You touched a part of my heart
+                that I thought had become numb.
+
+                ❤️
+            </p>
+
+        </div>
+
+
+        <div class="special">
+
+            <p>
+                And I know...
+
+                <br><br>
+
+                feelings can be unexpected.
+
+                <br>
+
+                Timing can be complicated.
+
+                <br>
+
+                And life doesn't always follow
+                the stories we imagine.
+
+                <br><br>
+
+                So I'm not asking you for anything.
+
+                <br><br>
+
+                I'm simply being honest.
+            </p>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                Somewhere between seeing your picture
+                and thinking about you,
+
+                <br><br>
+
+                you quietly became
+                a beautiful thought in my day.
+
+                ❤️
+            </p>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                Maybe someday you'll understand
+                why one picture could make someone feel
+                as if they had suddenly stepped into a garden.
+
+                <br><br>
+
+                A garden full of flowers.
+
+                <br>
+
+                A garden full of peace.
+
+                <br>
+
+                A garden where the heart
+                finally feels lighter.
+            </p>
+
+        </div>
+
+
+        <div class="final">
+
+            <p>
+                And somehow...
+
+                <br><br>
+
+                <strong>
+                    You became that garden for me. 🌸❤️
+                </strong>
+            </p>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                I don't know where life will take us.
+
+                <br><br>
+
+                Maybe our paths will become closer.
+
+                <br>
+
+                Maybe they won't.
+
+                <br><br>
+
+                But I will always be grateful
+                for the little moment when seeing you
+                made my world feel beautiful again.
+            </p>
+
+        </div>
+
+
+        <div class="final apology">
+
+            <p>
+                And Malti...
+
+                <br><br>
+
+                If any of this ever made you
+                uncomfortable, awkward, or pressured,
+
+                <br><br>
+
+                <strong>
+                    I'm genuinely sorry. 🥺❤️
+                </strong>
+
+                <br><br>
+
+                These are only my feelings.
+
+                <br><br>
+
+                You don't owe me an answer,
+                an explanation,
+                or anything in return.
+
+                <br><br>
+
+                I just wanted you to know
+                what was quietly sitting inside my heart.
+            </p>
+
+        </div>
+
+
+        <div style="text-align:center">
+
+            <button
+                onclick="nextSlide('poetry','slide6')">
+
+                I Have One More Thing To Say... 🌙
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIDE 6
+========================================================= -->
+
+<section
+    id="slide6"
+    class="slide">
+
+    <div class="quote">
+
+        <div class="final-heart">
+            ❤️
+        </div>
+
+        <div class="quote-text">
+
+            "Sometimes the most beautiful people
+            don't enter your life loudly...
+
+            <br><br>
+
+            They simply appear,
+
+            <br>
+
+            and suddenly the world
+            feels a little softer."
+
+        </div>
+
+        <button
+            onclick="nextSlide('slide6','slide7')">
+
+            Continue 🌸
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIDE 7
+========================================================= -->
+
+<section
+    id="slide7"
+    class="slide">
+
+    <div class="universe-card">
+
+        <div class="crown">
+            👑
+        </div>
+
+        <h1>
+            Okay...
+
+            <br>
+
+            One Last Question. 😏
+        </h1>
+
+        <p>
+            Do you know who was Miss Universe in 2025...
+
+            <br>
+
+            and why?
+        </p>
+
+        <div class="universe-buttons">
+
+            <button id="universeYes">
+                Yes 😌
+            </button>
+
+            <button
+                id="universeNo"
+                onclick="nextSlide('slide7','slide8')">
+
+                No 🤔
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIDE 8
+========================================================= -->
+
+<section
+    id="slide8"
+    class="slide">
+
+    <div class="winner-card">
+
+        <div class="crown">
+            👑
+        </div>
+
+        <h1>
+            Fátima Bosch Fernández
+        </h1>
+
+        <p>
+            of Mexico 🇲🇽
+
+            <br><br>
+
+            <strong>
+                Miss Universe 2025
+            </strong>
+        </p>
+
+        <button onclick="showReason()">
+
+            Know The Reason 😏
+
+        </button>
+
+        <div
+            id="reason"
+            class="reason">
+
+            <p>
+
+                She became Miss Universe...
+
+                <br><br>
+
+                because...
+
+                <br><br>
+
+                <strong>
+                    YOU DIDN'T PARTICIPATE! 😂👑❤️
+                </strong>
+
+            </p>
+
+        </div>
+
+        <br>
+
+        <button
+            class="small-btn"
+            onclick="nextSlide('slide8','slide9')">
+
+            Wait... There's More 👀
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIDE 9
+========================================================= -->
+
+<section
+    id="slide9"
+    class="slide">
+
+    <div class="card">
+
+        <div class="final-heart">
+            🫶
+        </div>
+
+        <h1>
+            And Now...
+
+            <br>
+
+            No More Questions.
+        </h1>
+
+        <p>
+            You don't have to say yes.
+
+            <br><br>
+
+            You don't have to say anything
+            you don't genuinely feel.
+
+            <br><br>
+
+            I don't want a forced answer.
+
+            <br><br>
+
+            I only wanted you to know
+            that someone out there
+            genuinely thinks you're special.
+        </p>
+
+        <button
+            onclick="nextSlide('slide9','slide10')">
+
+            One Final Message ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SLIDE 10
+========================================================= -->
+
+<section
+    id="slide10"
+    class="slide">
+
+    <div class="card">
+
+        <div class="final-heart">
+            🌹
+        </div>
+
+        <h1>
+            Malti...
+        </h1>
+
+        <p>
+            If you remember only one thing
+            from everything you saw here,
+
+            <br><br>
+
+            remember this:
+
+            <br><br>
+
+            <strong>
+                You made someone's world
+                feel a little more beautiful.
+
+                ❤️
+            </strong>
+
+            <br><br>
+
+            And honestly...
+
+            <br><br>
+
+            that's already something
+            worth being grateful for.
+
+            🌸✨
+        </p>
+
+        <div class="signature">
+
+            Made with a little courage,
+            a lot of feelings,
+
+            <br>
+
+            and one very stubborn heart. ❤️
+
+            <br><br>
+
+            — Anand
+
+        </div>
+
+        <button onclick="createCelebration()">
+
+            🌹 Keep This Moment 🌹
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================================================
+   PASSWORD PROTECTION
+========================================================= */
+
+const PASSWORD = "23082002";
+
+function checkPassword() {
+
+    const input =
+        document.getElementById("passwordInput");
+
+    const error =
+        document.getElementById("passwordError");
+
+    if (input.value === PASSWORD) {
+
+        document.getElementById("passwordGate")
+            .style.display = "none";
+
+        input.value = "";
+
+    } else {
+
+        error.textContent =
+            "Incorrect password. Please try again. ❤️";
+
+        input.value = "";
+
+        input.focus();
+    }
+}
+
+
+/* =========================================================
+   SLIDE NAVIGATION
+========================================================= */
+
+function nextSlide(current, next) {
+
+    const currentSlide =
+        document.getElementById(current);
+
+    const nextSlideElement =
+        document.getElementById(next);
+
+    if (!currentSlide || !nextSlideElement)
+        return;
+
+    currentSlide.classList.remove("active");
+
+    setTimeout(() => {
+
+        nextSlideElement.classList.add("active");
+
+    }, 100);
+
+    window.scrollTo(0,0);
+
+    createShootingStar();
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+function createStars() {
+
+    const container =
+        document.getElementById("stars");
+
+    for (
+        let i = 0;
+        i < 220;
+        i++
+    ) {
+
+        const star =
+            document.createElement("div");
+
+        star.className =
+            "star";
+
+        star.style.left =
+            Math.random() * 100 + "%";
+
+        star.style.top =
+            Math.random() * 100 + "%";
+
+        star.style.animationDelay =
+            Math.random() * 4 + "s";
+
+        star.style.animationDuration =
+            (
+                1 +
+                Math.random() * 4
+            ) + "s";
+
+        container.appendChild(star);
+    }
+}
+
+
+/* =========================================================
+   FLOATING SYMBOLS
+========================================================= */
+
+function createFloating() {
+
+    const symbols = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "🌸",
+        "🌹",
+        "🌷",
+        "✨",
+        "💫",
+        "🦋"
+
+    ];
+
+    const item =
+        document.createElement("div");
+
+    item.className =
+        "floating";
+
+    item.innerHTML =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+    item.style.left =
+        Math.random() * 100 + "%";
+
+    item.style.fontSize =
+        (
+            15 +
+            Math.random() * 28
+        ) + "px";
+
+    item.style.animationDuration =
+        (
+            6 +
+            Math.random() * 8
+        ) + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+
+        item.remove();
+
+    }, 15000);
+}
+
+
+/* =========================================================
+   SHOOTING STAR
+========================================================= */
+
+function createShootingStar() {
+
+    const star =
+        document.getElementById(
+            "shootingStar"
+        );
+
+    star.style.left =
+        (
+            70 +
+            Math.random() * 25
+        ) + "%";
+
+    star.style.top =
+        (
+            5 +
+            Math.random() * 25
+        ) + "%";
+
+    star.classList.remove("active");
+
+    void star.offsetWidth;
+
+    star.classList.add("active");
+}
+
+
+/* =========================================================
+   ESCAPING BUTTON
+========================================================= */
+
+function escapeButton(button) {
+
+    const rect =
+        button.getBoundingClientRect();
+
+    const maxX =
+        window.innerWidth -
+        rect.width -
+        15;
+
+    const maxY =
+        window.innerHeight -
+        rect.height -
+        15;
+
+    const x =
+        15 +
+        Math.random() *
+        Math.max(
+            0,
+            maxX - 15
+        );
+
+    const y =
+        15 +
+        Math.random() *
+        Math.max(
+            0,
+            maxY - 15
+        );
+
+    button.style.position =
+        "fixed";
+
+    button.style.left =
+        x + "px";
+
+    button.style.top =
+        y + "px";
+
+    button.style.margin =
+        "0";
+}
+
+
+/* =========================================================
+   LOVE NO BUTTON
+========================================================= */
+
+const loveNo =
+    document.getElementById("loveNo");
+
+loveNo.addEventListener(
+    "mouseenter",
+    () => escapeButton(loveNo)
+);
+
+loveNo.addEventListener(
+    "touchstart",
+    function(e) {
+
+        e.preventDefault();
+
+        escapeButton(loveNo);
+
+    },
+    { passive:false }
+);
+
+loveNo.addEventListener(
+    "pointerdown",
+    function(e) {
+
+        e.preventDefault();
+
+        escapeButton(loveNo);
+
+    }
+);
+
+
+/* =========================================================
+   MESSAGE NO BUTTON
+========================================================= */
+
+const messageNo =
+    document.getElementById("messageNo");
+
+messageNo.addEventListener(
+    "mouseenter",
+    () => escapeButton(messageNo)
+);
+
+messageNo.addEventListener(
+    "touchstart",
+    function(e) {
+
+        e.preventDefault();
+
+        escapeButton(messageNo);
+
+    },
+    { passive:false }
+);
+
+messageNo.addEventListener(
+    "pointerdown",
+    function(e) {
+
+        e.preventDefault();
+
+        escapeButton(messageNo);
+
+    }
+);
+
+
+/* =========================================================
+   MISS UNIVERSE YES BUTTON
+========================================================= */
+
+const universeYes =
+    document.getElementById(
+        "universeYes"
+    );
+
+universeYes.addEventListener(
+    "mouseenter",
+    () => escapeButton(universeYes)
+);
+
+universeYes.addEventListener(
+    "touchstart",
+    function(e) {
+
+        e.preventDefault();
+
+        escapeButton(universeYes);
+
+    },
+    { passive:false }
+);
+
+universeYes.addEventListener(
+    "pointerdown",
+    function(e) {
+
+        e.preventDefault();
+
+        escapeButton(universeYes);
+
+    }
+);
+
+universeYes.addEventListener(
+    "click",
+    function(e) {
+
+        e.preventDefault();
+
+        escapeButton(universeYes);
+
+    }
+);
+
+
+/* =========================================================
+   SHOW REASON
+========================================================= */
+
+function showReason() {
+
+    const reason =
+        document.getElementById(
+            "reason"
+        );
+
+    reason.style.display =
+        "block";
+}
+
+
+/* =========================================================
+   FINAL CELEBRATION
+========================================================= */
+
+function createCelebration() {
+
+    for (
+        let i = 0;
+        i < 60;
+        i++
+    ) {
+
+        setTimeout(() => {
+
+            createFloating();
+
+        }, i * 50);
+    }
+
+    createShootingStar();
+
+    alert(
+        "Thank you for reading everything, Malti. ❤️🌸"
+    );
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+createStars();
+
+setInterval(
+    createFloating,
+    500
+);
+
+setInterval(
+    createShootingStar,
+    7000
+);
+
+
+/* =========================================================
+   PASSWORD INPUT FOCUS
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        const input =
+            document.getElementById(
+                "passwordInput"
+            );
+
+        if (input) {
+            input.focus();
+        }
+    }
+);
+
+</script>
+
+</body>
+</html>
